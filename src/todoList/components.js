@@ -19,5 +19,18 @@ export function ToDoList(){
                 <button className="btn btn-primary" style={{width:"50%"}}>add task</button>
             </section>
         </form>
+        <div className="mt-3">
+            {list.map((item,index)=>{
+                return <TodoComponent key={index} item={item}/>
+            })}
+        </div>
+    </div>
+}
+
+function TodoComponent(props){
+    const {item} = props
+    return <div className="form-check form-switch">
+        <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{item}</label>
     </div>
 }
